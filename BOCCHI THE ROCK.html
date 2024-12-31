@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bocchi The Rock</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1e2222;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        #fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Home.png'); /* Replace with your image */
+            background-size: cover;
+            background-position: center 0%;
+            z-index: -1; /* Behind other content */
+
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #d4d4d4;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+            border-bottom: 1px solid;
+        }
+
+        /* Section Styles */
+
+        #home .contents {
+            margin-top: 55vh;
+            width: 100%; /* Full width of the viewport */
+            background: rgba(24, 28, 28, 0.9); /* Semi-transparent black background */
+            color: white;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            text-align: center; /* Centers the text inside */
+            padding-top: 1px;
+            padding-bottom: 50px;
+            margin-bottom: 300px;
+        }
+
+        #home h1 {
+            color: #ff6f61;
+            margin-bottom: 20px;
+            font-size: 250%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #home h2 {
+            color: #ffffff;
+            font-size: 200%;
+            margin-top: 30px;
+        }
+
+        #home p {
+            color: #d4d4d4;
+            max-width: 800px; /* Restricts text width for better readability */
+            margin: 0 auto; /* Centers the text */
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        #home .gallery {
+            display: flex; /* Enables Flexbox for alignment */
+            flex-wrap: wrap; /* Allows wrapping of images */
+            justify-content: center; /* Centers the gallery content */
+            gap: 20px; /* Space between images */
+            margin-top: 40px; /* Space above the gallery */
+        }
+
+        #home .gallery img {
+            width: 400px; /* Sets image width */
+            border-radius: 10px; /* Optional: Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow for style */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        #home .gallery img:hover {
+            transform: scale(1.05); /* Slightly enlarges image on hover */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1e2222;
+            color: #d4d4d4;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 2px solid #ff6f61;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-container h2 {
+            color: #ff6f61;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .links-group h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .links-group ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .links-group li {
+            margin: 5px 0;
+        }
+
+        .links-group a {
+            color: #d4d4d4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links-group a:hover {
+            color: #ff6f61;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #d4d4d4;
+        }
+
+        .watch-now-btn {
+            display: inline-block;
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 40px; /* Added to move button above the footer */
+            transition: background-color 0.3s ease;
+            width: 200px; /* Optional: width of the button */
+            text-align: center;
+            margin-left: auto; /* Centering the button */
+            margin-right: auto; /* Centering the button */
+            z-index: 1;
+        }
+
+        .watch-now-btn:hover {
+            background-color: #ff3b3b;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            |
+            <a href="#home">Home</a> |
+            <a href="#characters">Characters</a> |
+            <a href="#music">Music</a> |
+            <a href="#instruments">Instruments</a> |
+            <a href="#fan-arts">Fan Arts</a> |
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section id="home">
+            <div id="fixed-bg"></div>
+            <div class="contents">
+                <h1>About Bocchi The Rock</h1>
+                <p>
+                    Bocchi the Rock! is a band comedy 4-koma manga series written and illustrated by Aki Hamazi. 
+                    The manga series serialized in Manga Time Kirara MAX by Houbunsha since the February 2018 issue and collected five volumes in tankōbon format as of November 2022. 
+                    It became a popular series for its successor of K-ON! and ranked 8th place in the Next Manga Awards 2019.
+                </p>
+                <p>
+                    An anime series produced by CloverWorks premiered from October 9 to December 25, 2022, with two theater compilations—the first part screened on June 7, 2024, 
+                    and the second part on August 9, 2024.
+                </p>
+                <p>
+                    In this story, Hitori Gotoh is a high school girl who's starting to learn to play the guitar because she dreams of being in a band. 
+                    However, she's so shy that she hasn't made a single friend. Her dream might come true after she meets Nijika Ijichi, 
+                    a girl who plays drums and is looking for a new guitarist for her band.
+                </p>
+                <h2>Screenshots</h2>
+            <div class="gallery">
+                <a href="https://scontent.fceb1-3.fna.fbcdn.net/v/t39.30808-6/471646937_670771309220518_4567265984685225782_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEr_JboWecZlBZI5o9xGc4jEhqlpZ39s48SGqWlnf2zj2LoiIytjc_MN5zAfwHqZI3EeOzditDD7qqjSjLpk-6p&_nc_ohc=s59x3mgEJ10Q7kNvgGp5EZU&_nc_zt=23&_nc_ht=scontent.fceb1-3.fna&_nc_gid=AjsF4Nsz7iIHSpehscvF0Xw&oh=00_AYAdHlGB_mVBlzX1YNd2pKmRT-I1mst7Zq84aCdTJIn2xA&oe=677671CF" target="_blank">
+                <img src="SS1.jpg" alt="Screenshot 1">
+                </a>
+                <a href="https://scontent.fceb1-4.fna.fbcdn.net/v/t39.30808-6/471643980_670456049252044_3687010552317750373_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHiymX9cNFghLb8nBXwn9V4wQ20FJ8vTQ_BDbQUny9ND78Q8_hkja4R8CrtRcqJjEh0681JyFK-cbzqGb0v17xj&_nc_ohc=D9x848_8aHgQ7kNvgGqB9gc&_nc_zt=23&_nc_ht=scontent.fceb1-4.fna&_nc_gid=AAfKp-qsmZ_mZcvxV9A2oUK&oh=00_AYCU6Rwl1b4t__lcwc7ofwDiIXlJ1nqws5LyNA88HLZQ4Q&oe=67767DF5" target="_blank">
+                <img src="SS2.jpg" alt="Screenshot 2">
+                </a>
+                <img src="SS3.jpg" alt="Screenshot 3">
+                <img src="SS4.jpg" alt="Screenshot 4">
+                <img src="SS5.jpg" alt="Screenshot 5">
+                <img src="SS6.jpg" alt="Screenshot 6">
+                <img src="SS7.jpg" alt="Screenshot 7">
+                <img src="SS8.jpg" alt="Screenshot 8">
+                <img src="SS9.jpg" alt="Screenshot 9">
+                <img src="SS10.jpg" alt="Screenshot 10">
+                <img src="SS11.jpg" alt="Screenshot 11">
+                <img src="SS12.jpg" alt="Screenshot 12">
+                <img src="SS13.jpg" alt="Screenshot 13">
+                <img src="SS14.jpg" alt="Screenshot 14">
+                <img src="SS15.jpg" alt="Screenshot 15">
+            </div>
+            <a href="https://9animetv.to/watch/bocchi-the-rock-17479?ep=94535" target="_blank" class="watch-now-btn">WATCH NOW</a>
+        </div>
+
+        </section>
+    </main>
+</body>
+<footer>
+    <div class="footer-container">
+        <h2>Communities and Site</h2>
+        <div class="footer-links">
+            <div class="links-group">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#discord" target="_blank">Discord</a></li>
+                    <li><a href="#reddit" target="_blank">Reddit</a></li>
+                    <li><a href="#twitter" target="_blank">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="links-group">
+                <h3>Site</h3>
+                <ul>
+                    <li><a href="#privacy" target="_blank">Privacy Policy</a></li>
+                    <li><a href="#terms" target="_blank">Terms of Use</a></li>
+                    <li><a href="#contact" target="_blank">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">© 2023 Bocchi The Rock. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</html>
